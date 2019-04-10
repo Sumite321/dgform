@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-client
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8001/eureka"
+
+# Increase the Hystrix timeout to 60s (globally)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
